@@ -12,7 +12,7 @@ import (
 )
 
 // Reads input data and a base64-encoded bloblang mapping from Stdin
-// (must be separated by '}[)(]') and prints the result to Stdout.
+// (must be separated by '[^^]') and prints the result to Stdout.
 // In the event of errors will output to StdErr and exit with a non-0 code.
 //
 // Example
