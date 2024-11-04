@@ -46,12 +46,12 @@ func main() {
 		l.Printf("error decoding munge mapping %v\n", err)
 		os.Exit(5)
 	}
-	exe, err := blobmunge.ParseMapping(string(decoded))
+	b, err := blobmunge.New(string(decoded))
 	if err != nil {
 		l.Printf("error parsing munge mapping %v\n", err)
 		os.Exit(6)
 	}
-	munged, err := blobmunge.ApplyBloblangMapping([]byte(lines[0]), exe)
+	munged, err := b.ApplyBloblangMapping(lines[0])
 	if err != nil {
 		l.Printf("error applying mapping %v\n", err)
 		os.Exit(7)
